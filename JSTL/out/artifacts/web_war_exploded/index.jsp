@@ -7,24 +7,28 @@
     <title></title>
   </head>
   <body>
-    //For Each
+    <%--For Each--%>
     <c:forEach var="i" begin="1" end="10">
       <c:out value="${i}"/>
     </c:forEach>
 
-    //Token
+    <%--Token--%>
     <c:forTokens items = "Car,Bike,Bus" delims = "," var = "name">
       <c:out value = "${name}"/><p>
     </c:forTokens>
 
-    <%--<c:import url="http://www.agchurchthanjavur.com/" ></c:import>--%>
+      <%--Import Another Website--%>
+    <c:import url="http://www.agchurchthanjavur.com/" ></c:import>
 
+    <%--Establish The Connection To Database--%>
     <s:setDataSource var="db" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/kit" user="root" password=""/>
 
+    <%--Query--%>
     <s:query dataSource="${db}" var="rs">
       select * from balance;
     </s:query>
 
+    <%--For Each To Display Result Set--%>
     <c:forEach var="tbl" items="${rs.rows}" >
       <c:out value="${tbl.id}" />
       <c:out value="${tbl.balance}" />
