@@ -18,21 +18,21 @@
     </c:forTokens>
 
       <%--Import Another Website--%>
-    <c:import url="http://www.agchurchthanjavur.com/" ></c:import>
+    <c:import url="http://www.google.com/" ></c:import>
 
     <%--Establish The Connection To Database--%>
-    <s:setDataSource var="db" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/kit" user="root" password=""/>
+    <%--<s:setDataSource var="db" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/kit" user="root" password=""/>--%>
 
     <%--Query--%>
-    <s:query dataSource="${db}" var="rs">
-      select * from balance;
-    </s:query>
+    <%--<s:query dataSource="${db}" var="rs">--%>
+      <%--select * from balance;--%>
+    <%--</s:query>--%>
 
-    <%--For Each To Display Result Set--%>
-    <c:forEach var="tbl" items="${rs.rows}" >
-      <c:out value="${tbl.id}" />
-      <c:out value="${tbl.balance}" />
-    </c:forEach>
+    <%--&lt;%&ndash;For Each To Display Result Set&ndash;%&gt;--%>
+    <%--<c:forEach var="tbl" items="${rs.rows}" >--%>
+      <%--<c:out value="${tbl.id}" />--%>
+      <%--<c:out value="${tbl.balance}" />--%>
+    <%--</c:forEach>--%>
 
 
   </body>
